@@ -1,0 +1,42 @@
+@import "src/variables.scss";
+.tutorial{
+  position: relative;
+  font-family: 'Noto Serif';
+  &__image{
+    width: 100vw;
+    max-height: 50vh;
+    object-fit: cover;
+    object-position: center;
+  }
+  &__heading{
+    position: sticky;
+    top: 0;
+    left: 0;
+    display: block;
+    padding: 20px 0 10px 0;
+    background: white;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    h1{
+          font-size: 2.2em;
+          margin-bottom: 0;
+    }
+  }
+  &__article{
+    line-height: 1.8em;
+
+    p{
+      font-size: 1.2em;
+    }
+
+    img, iframe, video{
+      width: 100%;
+      margin: 10px 0 10px 0;
+    }
+    a{
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+
+}

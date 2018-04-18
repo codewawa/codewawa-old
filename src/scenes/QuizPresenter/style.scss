@@ -1,0 +1,16 @@
+@import "src/variables";
+.login{
+  background: $primary;
+  display: flex;
+  justify-content: center;
+
+  &__center{
+      margin-top: 10%;
+      width: 25%;
+      color: white;
+
+      input, button{
+        width: 100%;
+      }
+  }
+}

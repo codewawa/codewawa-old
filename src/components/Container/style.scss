@@ -1,0 +1,15 @@
+.container-wrapper{
+  width: 100%;
+}
+.container{
+  width: 75%;
+  margin: 0 auto 0 auto;
+  &.narrow{
+    width: 40em;
+  }
+}
+@media (max-width:950px) {
+  .container, .container.narrow{
+    width: calc(100% - 40px);
+  }
+}

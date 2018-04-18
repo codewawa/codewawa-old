@@ -1,0 +1,11 @@
+@import "src/variables.scss";
+
+.presentations{
+
+  &__container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+  }
+}
