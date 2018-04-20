@@ -7,6 +7,8 @@ To add new presentation:
   (Object must have keys: title, author, image, component)
 */
 import IntroductionToJavascript from './presentations/IntroductionToJavascript';
+import JavascriptEvents from './presentations/JavascriptEvents';
 export default  [
-IntroductionToJavascript
+IntroductionToJavascript,
+JavascriptEvents
 ]
