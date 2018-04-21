@@ -31,6 +31,7 @@ import jsLogo from './assets/jslogo-transparent.png';
 import SplashImage from './assets/signal.jpg';
 import doSomethingGreatImage from './assets/doSomethingGreat.jpg';
 import wrongWayImage from './assets/wrongWay.jpg';
+import bubblingCapturingImage from './assets/bubbling-capturing.jpg';
 const theme = createTheme({
   primary: '#f9c300'
 }, {primary: 'Raleway'})
@@ -58,14 +59,14 @@ export default class extends Component {
           <Heading size={2}>Dynamiczność</Heading>
       </Slide>
       <Slide bgColor="black">
-      <Heading size={2} textColor="primary">Basic</Heading>
+      <Heading size={2} textColor="primary">Basic events</Heading>
       <List textColor="white">
       <Appear><ListItem>click</ListItem></Appear>
-      <Appear><ListItem>mouseenter</ListItem></Appear>
+      <Appear><ListItem>mouseover</ListItem></Appear>
       <Appear><ListItem>mouseout</ListItem></Appear>
       <Appear><ListItem>change</ListItem></Appear>
       <Appear><ListItem>input</ListItem></Appear>
-      <Appear><ListItem>cut</ListItem></Appear>
+      <Appear><ListItem>keyup</ListItem></Appear>
       <Appear><ListItem>copy</ListItem></Appear>
       <Appear><ListItem>paste</ListItem></Appear>
       </List>
@@ -86,42 +87,128 @@ export default class extends Component {
   </head>
   <body>
     <button onClick="doSomething()">Click me!</button>
-    <script src="./scripts.js"></script> <!-- <= doSomething function inside -->
+    <script src="./scripts.js"></script>
+    <!-- ^ doSomething function inside -->
   </body>
 </html>
 `}
 </code></pre>
       </Slide>
-      <Slide bgImage={wrongWayImage} bgDarken={0.7} transition={["zoom"]}>
+      <Slide bgImage={wrongWayImage} bgDarken={0.9} transition={["zoom"]}>
+      <Appear>
+      <BlockQuote>
+  <Quote>For a start, it is not a good idea to mix up your HTML and your JavaScript,
+    keeping your JavaScript all in one place is better;</Quote>
+  <Cite>Mozilla Developer Network</Cite>
+</BlockQuote>
+</Appear>
+      </Slide>
+      <Slide align="center flex-start">
+        <pre>
+        <code className="language-javascript">
+      {`
+function(callback)\{
+  let rand = Math.random()
+  if (typeof callback === 'function')\{
+    callback(rand)
+    return
+  \}
+  throw 'Callback argument is not a function'
+  \}
+`}
+</code></pre>
       </Slide>
 
-      <Slide bgImage={doSomethingGreatImage}>
-      </Slide>
       <Slide align="flex-start">
+        <pre>
+        <code className="language-javascript">
+          {`const btn = document.querySelector('button')
+btn.onclick = function()\{
+  alert('Anyhow :( ')
+\}`}
+</code></pre>
+
+
+
+      <Layout>
+            <Fill>
+              <Appear>
+          <pre>
+          <code className="language-javascript">
+            {`const btn = document.querySelector('button')
+btn.addEventListener('click', function()\{
+  alert("I'm professional!");
+\})`}
+  </code></pre>
+      </Appear>
+  </Fill>
+        </Layout>
+      </Slide>
+      <Slide>
       <Layout>
             <Fill>
           <pre>
           <code className="language-javascript">
-            {`document.querySelector('button').addEventListener('click', function()\{
-              alert("I'm professional!");
-            \})`}
+            {`const btn = document.querySelector('button')
+btn.addEventListener('click', function(e)\{
+  console.log(e)
+\})`}
   </code></pre>
   </Fill>
-        <Appear>
-    <Fill>
-
-          <pre>
-          <code className="language-javascript">
-            {`document.querySelector('button').onClick = function()\{
-              alert('Wrong way')
-            \}`}
-  </code></pre>
-
-        </Fill>
-        </Appear>
         </Layout>
       </Slide>
-
+      <Slide>
+      <Layout>
+            <Fill>
+          <pre>
+          <code className="language-javascript">
+            {`const btn = document.querySelector('button')
+function changeText()\{
+  btn.innerText = 'clicked'
+\}
+btn.addEventListener('click', changeText)`}
+  </code></pre>
+  </Fill>
+        </Layout>
+      </Slide>
+      <Slide bgColor="black">
+      <Heading fit  textColor="primary">Zalety</Heading>
+      <Heading size={2} textColor="white">addEventListener</Heading>
+      </Slide>
+      <Slide>
+      <Layout>
+            <Fill>
+          <pre>
+          <code className="language-javascript">
+            {`const btn = document.querySelector('button')
+function changeText()\{
+  btn.innerText = 'clicked'
+\}
+btn.addEventListener('click', changeText)
+btn.removeEventListener('click', changeText)`
+}
+  </code></pre>
+  </Fill>
+        </Layout>
+      </Slide>
+      <Slide>
+      <Layout>
+            <Fill>
+          <pre>
+          <code className="language-javascript">
+            {`const btn = document.querySelector('button')
+btn.addEventListener('click', someFunction)
+btn.addEventListener('click', anotherFunction)`
+}
+  </code></pre>
+  </Fill>
+        </Layout>
+      </Slide>
+<Slide>
+<Image src={bubblingCapturingImage} />
+</Slide>
+<Slide bgImage={doSomethingGreatImage}>
+</Slide>
 <Slide>
   <Heading fit>Dziękuję za uwagę</Heading>
   <Heading size={4} margin="1em">Michał Oręziak</Heading>
