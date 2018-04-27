@@ -8,7 +8,9 @@ To add new presentation:
 */
 import IntroductionToJavascript from './presentations/IntroductionToJavascript';
 import JavascriptEvents from './presentations/JavascriptEvents';
+import CreatingFirstJavascriptProject from './presentations/CreatingFirstJavascriptProject';
 export default  [
 IntroductionToJavascript,
-JavascriptEvents
+JavascriptEvents,
+CreatingFirstJavascriptProject
 ]
