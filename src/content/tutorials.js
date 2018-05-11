@@ -7,6 +7,7 @@ To add new tutorial:
   (Object must have keys: title, author, image, component)
 */
 import AtomBasics from './tutorials/AtomBasics'
+import GitOverview from './tutorials/GitOverview'
 export default  [
   // {
   //   title: "Introduction to JavaScript",
@@ -14,5 +15,6 @@ export default  [
   //   image: <image>,
   //   component: {}
   // }
-  AtomBasics
+  AtomBasics,
+  GitOverview
 ]

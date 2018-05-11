@@ -19,6 +19,12 @@ export default class Tutorial extends Component{
 
               <div className="tutorial__article">
                 <tutorial.component />
+                <div className="tutorial__article__end">
+                <p>Chcesz, abyśmy opublikowali tutorial na konkretny temat? 
+                  A może chcesz umieścić tu swój artykuł? <a href="https://goo.gl/forms/phI9WIXU64LqjHvy1">Wypełnij formularz!</a>
+                  </p>
+                </div>
+           
               </div>
 
       </Container>
