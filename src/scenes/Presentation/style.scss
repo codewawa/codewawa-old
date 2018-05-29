@@ -36,6 +36,7 @@ cursor: pointer;
     color: white;
     transition: .2s all;
     overflow: hidden;
+    z-index:2;
 
     *{
       visibility: hidden;
@@ -54,6 +55,5 @@ cursor: pointer;
     height: 100vh;
     top: 0;
     left: 0;
-    z-index: -1;
   }
 }
