@@ -115,6 +115,36 @@ display: flex;
 align-items: center;
 justify-content: center;
 
+  &__banner{
+    position: absolute;
+    transition: .2s all;
+    top: 100%;
+    left: 0;
+    width: 100vw;
+    height: 2.5em;
+    background: $accent;
+    color: white;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__container{
+      width: 55%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      *:not(span){
+        cursor: pointer;
+      }
+      span{
+        font-size: 1.5em;
+      }
+    }
+    &.hidden{
+      height: 0;
+      opacity: 0;
+    }
+  }
   &__bars {
     position: absolute;
     left: 20px;

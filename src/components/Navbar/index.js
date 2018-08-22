@@ -8,7 +8,10 @@ class Navbar extends Component {
   constructor(props){
     super(props);
     console.log(props);
-    this.state = {menuActive: false}
+    this.state = {
+      menuActive: false,
+      bannerActive: true
+    }
   }
   toggleMenu = () => this.setState({menuActive: !this.state.menuActive})
   closeMenu = () => this.setState({menuActive: false})
@@ -30,6 +33,12 @@ class Navbar extends Component {
           <li><NavLink activeClassName="active" to="/meetups" onClick={this.closeMenu}>Meetupy</NavLink></li>
           <li><NavLink activeClassName="active" to="/contact" onClick={this.closeMenu}>Kontakt</NavLink></li>
         </ul>
+        <div className={`navbar__banner ${!this.state.bannerActive ? 'hidden' : ''}`}>
+          <div className="navbar__banner__container">
+            <span>Start nowej wersji serwisu już <strong>1 października</strong>!</span>
+            <FontAwesomeIcon icon={faTimes} onClick={() => this.setState({bannerActive: false})}/>
+          </div>
+        </div>
     </div>);
   }
 }
